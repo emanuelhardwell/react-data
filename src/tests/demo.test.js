@@ -1,7 +1,10 @@
-test("Debe ser true", () => {
-  const isActive = true;
+//
+//
+describe("Pruebas en el archivo DEMO", () => {
+  test("Deben ser palabras iguales", () => {
+    const palabra1 = "Hola mundo";
+    const palabra2 = `Hola mundo`;
 
-  if (isActive) {
-    throw new Error("No esta activo");
-  }
+    expect(palabra1).toBe(palabra2);
+  });
 });
