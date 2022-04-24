@@ -9,7 +9,7 @@ const AppPropTypes = ({
       <h1> hola mundo </h1>
 
       <h2> Saludo: </h2>
-      <h4> --{saludo}-- </h4>
+      <h4> {saludo} </h4>
       <p> Estos son los PropTypes </p>
     </div>
   );
