@@ -17,7 +17,35 @@ describe("Pruebas en el archivo CounterApp.js", () => {
   test(" Debe de mostrar el valor por defecto de 100", () => {
     const wrapper = shallow(<CounterApp value={100} />);
 
-    const res = wrapper.find("h3").text();
+    const res = wrapper.find("h3").text().trim();
     expect(res).toBe("100");
+  });
+
+  //   prueba con los botones suma, resta, reset
+  test("Debe de simular el boton +1", () => {
+    const wrapper = shallow(<CounterApp />);
+    wrapper.find("button").at(0).simulate("click");
+
+    const res = wrapper.find("h3").text().trim();
+
+    expect(res).toBe("11");
+  });
+
+  test("Debe de simular el boton -1", () => {
+    const wrapper = shallow(<CounterApp />);
+    wrapper.find("button").at(1).simulate("click");
+
+    const res = wrapper.find("h3").text().trim();
+
+    expect(res).toBe("9");
+  });
+
+  test("Debe de simular el boton RESET", () => {
+    const wrapper = shallow(<CounterApp />);
+    wrapper.find("button").at(2).simulate("click");
+
+    const res = wrapper.find("h3").text().trim();
+
+    expect(res).toBe("10");
   });
 });
